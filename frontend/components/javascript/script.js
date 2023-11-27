@@ -4,7 +4,7 @@ $(document).ready(function() {
         theme : {
             extend :{
                 fontFamily : {
-                    sans : ['Nunito'],
+                    sans : ["Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
                 },
                 color : {
                     core: "#da373d",
