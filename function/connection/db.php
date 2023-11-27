@@ -3,11 +3,25 @@
     $password = "";
     $database = "toko_online";
     $hostname = "localhost";
-    $connection = mysql_connect($hostname, $user_name, $password, $database);
-    $getDb = mysql_select_db($connection);
-    try ($getDb){
-        echo "Database connected and Finding";
-    }catch(Exception $e){
-        echo "Database Not Found !, '$e'";
+    $connection = new mysqli($hostname, $user_name, $password, $database);
+
+    if($connection->connect_error){
+        die("Connection Error: " . $connection->connect_error);
     }
+
+    try {
+        $getDb = $connection->select_db($database);
+
+        if(!$getDb){
+            throw new Exception("Database Not Found !");
+        }
+
+
+        echo "Database connected and Found";
+    }catch(Exception $e){
+        echo "Error : ". $e->getMassage();
+    }
+
+
+    $connection->close();
 ?>

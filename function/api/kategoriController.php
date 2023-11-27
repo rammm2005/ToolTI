@@ -1,6 +1,8 @@
 <?php
     
-
+function index() {
+    
+}
 
 
 ?>
