@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // tailwind theme setup
-    tailwind config = {
+    tailwind.config = {
         theme : {
             extend :{
                 fontFamily : {
